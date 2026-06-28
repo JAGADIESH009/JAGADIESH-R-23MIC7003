@@ -65,12 +65,14 @@
   font-family: var(--font-display);
   font-size: 4rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.25; /* Increased to prevent clipping */
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
+  padding-bottom: 0.2em; /* Prevent clipping for gradient text */
   background: linear-gradient(to right, #ffffff, #a3a3a3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  overflow: visible;
 }
 
 .hero-title span {
@@ -246,13 +248,18 @@
 .layer-13-portrait { z-index: 13; align-items: flex-end; /* Anchor to bottom */ padding-bottom: 20px; transition: transform 0.1s ease-out; }
 .c-character-wrapper { position: relative; height: 100%; display: flex; justify-content: center; align-items: flex-end; }
 .c-hero-img {
-  height: 95%; max-height: 85vh; width: auto; object-fit: contain; object-position: bottom center;
+  height: 105%; max-height: 95vh; width: auto; object-fit: contain; object-position: bottom center;
   display: block;
-  /* Premium Realistic Apple-style Rim Light */
+  /* Shift right */
+  transform: translateX(50px);
+  /* Smooth vertical fade at the bottom to prevent harsh cutoff */
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  /* Premium Realistic Apple-style Rim Light + Subtler shadow beneath */
   filter: drop-shadow(0 0 2px rgba(167,139,250,0.4)) /* Realistic thin Lavender rim */
           drop-shadow(0 0 15px rgba(124,58,237,0.2)) /* Soft Royal Purple inner bloom */
           drop-shadow(0 0 50px rgba(109,40,217,0.15)) /* Diffused Deep Violet ambient glow */
-          drop-shadow(0 20px 30px rgba(0,0,0,0.6)); /* Base shadow for grounding */
+          drop-shadow(0 30px 40px rgba(0,0,0,0.5)); /* Subtle depth shadow */
   transform-origin: bottom center;
 }
 
