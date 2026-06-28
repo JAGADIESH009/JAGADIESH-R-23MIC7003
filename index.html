@@ -117,28 +117,51 @@
         <div class="hero-visual reveal">
           <div class="premium-vector-container" id="vector-parallax-container">
             
-            <!-- Deep Background Layers (Effects Behind Vector) -->
-            <div class="pv-bg-glow"></div>
-            <div class="pv-gradient-blob"></div>
-            
-            <div class="pv-rings-layer">
-              <div class="pv-ring pv-ring-1"></div>
-              <div class="pv-ring pv-ring-2"></div>
+            <!-- Layer 1: Background Gradient & Glow -->
+            <div class="pv-layer-1-bg">
+              <div class="pv-bg-glow"></div>
+            </div>
+
+            <!-- Layer 2: Nebula & Fog -->
+            <div class="pv-layer-2-nebula">
+              <div class="pv-gradient-blob pb-1"></div>
+              <div class="pv-gradient-blob pb-2"></div>
+              <div class="pv-depth-fog"></div>
             </div>
             
-            <div class="pv-particles-layer" id="vector-particles">
-              <!-- Particles & Stars -->
-              <div class="pv-particle pv-p1"></div>
-              <div class="pv-particle pv-p2"></div>
-              <div class="pv-particle pv-p3"></div>
+            <!-- Layer 3: HUD Graphics & Wireframes -->
+            <div class="pv-layer-3-hud">
+              <div class="pv-hud-circle hc-1"></div>
+              <div class="pv-hud-circle hc-2"></div>
+              <div class="pv-hud-circle hc-3"></div>
+              <div class="pv-wireframe-grid"></div>
+              <div class="pv-hexagon-outline"></div>
+            </div>
+            
+            <!-- Layer 4: Floating Tech Particles & Cubes -->
+            <div class="pv-layer-4-particles" id="vector-particles">
+              <!-- Digital Dust / Stars -->
+              <div class="pv-star ps-1"></div>
+              <div class="pv-star ps-2"></div>
+              <div class="pv-star ps-3"></div>
+              <div class="pv-star ps-4"></div>
+              <div class="pv-star ps-5"></div>
               
-              <!-- Code Symbols -->
-              <div class="pv-symbol pv-s1">&lt; /&gt;</div>
-              <div class="pv-symbol pv-s2">{ }</div>
-              <div class="pv-symbol pv-s3">AI</div>
+              <!-- Floating Cubes -->
+              <div class="pv-cube pc-1"></div>
+              <div class="pv-cube pc-2"></div>
+
+              <!-- Tech Symbols -->
+              <div class="pv-symbol pv-s-code">&lt; /&gt;</div>
+              <div class="pv-symbol pv-s-brace">{ }</div>
+              <div class="pv-symbol pv-s-ai">AI</div>
+              <div class="pv-symbol pv-s-js">JS</div>
+              <div class="pv-symbol pv-s-react">React</div>
+              <div class="pv-symbol pv-s-node">Node</div>
+              <div class="pv-symbol pv-s-py">Python</div>
+              <div class="pv-symbol pv-s-db">🗄️</div>
+              <div class="pv-symbol pv-s-api">⚙️</div>
             </div>
-            
-            <div class="pv-light-rays"></div>
 
             <!-- Glassmorphism Container Frame (Behind Vector) -->
             <div class="pv-glass-card">
@@ -155,10 +178,19 @@
             <!-- Magnetic Hover Target & Glow -->
             <div class="pv-magnetic-glow" id="pv-magnetic-glow"></div>
 
-            <!-- The Uploaded Vector Image -->
-            <div class="pv-character-wrapper" id="vector-character">
+            <!-- Layer 5: The Uploaded Vector Image -->
+            <div class="pv-layer-5-portrait pv-character-wrapper" id="vector-character">
               <div class="pv-character-shadow"></div>
+              <div class="pv-blue-backlight"></div>
+              <div class="pv-purple-rim-glow"></div>
               <img src="assets/images/profile.jpg" alt="Jagadiesh R Vector Portrait" class="pv-img">
+            </div>
+
+            <!-- Layer 6: Foreground Enhancements -->
+            <div class="pv-layer-6-foreground" id="vector-foreground">
+              <div class="pv-orbit-line"></div>
+              <div class="pv-energy-ring"></div>
+              <div class="pv-volumetric-rays"></div>
             </div>
 
           </div>
