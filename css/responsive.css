@@ -15,28 +15,30 @@
 }
 
 @media (max-width: 768px) {
-  /* Fix layout overflow safely for mobile */
-  .container { padding: 0 1.25rem; box-sizing: border-box; width: 100%; overflow: visible; }
+  /* Fix container clipping and padding globally for mobile */
+  .container { padding: 0 1.25rem; box-sizing: border-box; width: 100%; max-width: 100%; overflow: visible; }
   .header { box-sizing: border-box; width: 100%; }
-  .hero { overflow: visible; box-sizing: border-box; }
   
   .section { padding: 6rem 0; }
   .section-title { font-size: 2rem; }
   
-  /* Prevent left/right clipping on gradient text */
-  .hero-title { font-size: 3rem; padding: 0 0.1em; box-sizing: border-box; word-wrap: break-word; max-width: 100%; overflow: visible; }
+  /* Hero Section: Single Column, Stacked, Centered */
+  .hero { overflow: visible; box-sizing: border-box; min-height: auto; padding-top: 120px; padding-bottom: 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 1rem; text-align: center; justify-items: center; width: 100%; }
+  .hero-content { align-items: center; width: 100%; }
+  .hero-desc { margin-left: auto; margin-right: auto; max-width: 100%; }
+  .hero-ctas { justify-content: center; width: 100%; }
+  
+  /* Prevent text clipping and scale fluidly */
+  .hero-title { font-size: clamp(2.5rem, 8vw, 3.5rem); padding: 0 0.1em; box-sizing: border-box; word-wrap: break-word; max-width: 100%; overflow: visible; }
   .hero-title span { padding: 0 0.1em; }
   .logo { padding: 0 0.1em; box-sizing: border-box; overflow: visible; }
+  .hero-subtitle { font-size: clamp(1.2rem, 4vw, 1.5rem); margin-bottom: 1.5rem; }
   
-  .hero-subtitle { font-size: 1.5rem; }
-  
-  /* Scale down heavy graphical elements */
-  .premium-bg-layers { transform: translate(-50%, -50%) scale(0.7); }
-  .portrait-card-container { max-width: 320px; height: 380px; margin: 0 auto; }
-  .portrait-card { width: 250px; height: 330px; border-radius: 24px; }
-  .portrait-card::after { border-radius: 24px; }
-  .portrait-card img { border-radius: 24px; }
-  .visual-globe { width: 330px; height: 330px; top: calc(50% - 165px); left: calc(50% - 165px); }
+  /* Proper Edge-to-Edge Character Scaling */
+  .borderless-cinematic { height: 60vh; min-height: 400px; transform: none; width: 100%; max-width: 100vw; margin: 0 auto; display: flex; justify-content: center; align-items: flex-end; padding: 0; }
+  .c-hero-img { transform: none; height: 115%; max-height: 60vh; max-width: 100vw; object-fit: contain; }
+  .premium-bg-layers { transform: translate(-50%, -50%) scale(0.65); max-width: 100vw; }
   
   .projects-grid { grid-template-columns: 1fr; gap: 2rem; }
   
@@ -65,15 +67,17 @@
 
 @media (max-width: 480px) {
   .section { padding: 4.5rem 0; }
-  .hero-title { font-size: 2.4rem; padding: 0 0.1em; word-wrap: break-word; }
-  .hero-subtitle { font-size: 1.2rem; }
-  .hero-desc { font-size: 1rem; }
+  .hero-title { font-size: clamp(2rem, 10vw, 2.5rem); padding: 0 0.1em; word-wrap: break-word; }
+  .hero-subtitle { font-size: clamp(1rem, 5vw, 1.2rem); }
+  .hero-desc { font-size: 0.95rem; }
   
-  /* Prevent horizontal overflow on small phones */
+  /* Adjust hero character spacing */
+  .hero-grid { gap: 0.5rem; }
+  .borderless-cinematic { height: 50vh; transform: none; width: 100%; max-width: 100vw; margin-top: 1rem; }
+  .c-hero-img { height: 125%; max-height: 55vh; transform: none; }
   .premium-bg-layers { transform: translate(-50%, -50%) scale(0.5); }
-  .portrait-card-container { transform: scale(0.85); margin-top: -20px; }
   
-  .about-stats { grid-template-columns: 1fr; }
+  .c-purple-bloom, .cb-1, .cb-2, .c-ground-platform { max-width: 100vw; max-height: 100vw; }
   .skills-grid { grid-template-columns: 1fr; column-gap: 0; }
   .contact-form { padding: 2rem 1.25rem; }
   .projects-filter { gap: 0.5rem; }
