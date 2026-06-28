@@ -108,5 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initRippleEffects();
   initTimelineScrollTracker();
   initScrollReveals();
+  if (typeof initVectorParallax === 'function') initVectorParallax();
   initTypingAnimation();
 });

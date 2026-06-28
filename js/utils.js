@@ -36,3 +36,43 @@ function initRippleEffects() {
     });
   });
 }
+
+// Vector Parallax and Tilt interaction
+function initVectorParallax() {
+  try {
+    const container = document.getElementById('vector-parallax-container');
+    const character = document.getElementById('vector-character');
+    const particles = document.getElementById('vector-particles');
+    
+    if (!container || !character) return;
+    
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
+      
+      character.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      
+      if (particles) {
+        const pX = ((x - centerX) / centerX) * -15;
+        const pY = ((y - centerY) / centerY) * -15;
+        particles.style.transform = `translate(${pX}px, ${pY}px)`;
+      }
+    });
+    
+    container.addEventListener('mouseleave', () => {
+      character.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+      if (particles) {
+        particles.style.transform = `translate(0px, 0px)`;
+      }
+    });
+  } catch (err) {
+    console.warn('Vector parallax init failed gently:', err);
+  }
+}

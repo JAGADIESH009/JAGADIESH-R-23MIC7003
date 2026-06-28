@@ -115,49 +115,38 @@
         </div>
 
         <div class="hero-visual reveal">
-          <div class="portrait-card-container" id="portrait-container">
-
-            <!-- Animated Mesh Background -->
-            <div class="futuristic-mesh-bg"></div>
-
-            <!-- Breathing Radial Glow -->
-            <div class="futuristic-radial-glow"></div>
-
-            <!-- Floating Blurred Orbs (Parallax Layer) -->
-            <div class="futuristic-orbs-layer parallax-bg">
-              <div class="f-orb f-orb-1"></div>
-              <div class="f-orb f-orb-2"></div>
-              <div class="f-orb f-orb-3"></div>
+          <div class="vector-container" id="vector-parallax-container">
+            <!-- Dynamic Background Layers -->
+            <div class="vector-bg-glow"></div>
+            <div class="vector-mesh"></div>
+            <div class="vector-rings">
+              <div class="v-ring v-ring-1"></div>
+              <div class="v-ring v-ring-2"></div>
             </div>
-
-            <!-- Animated Glowing Rings -->
-            <div class="futuristic-rings-layer">
-              <div class="f-ring f-ring-1"></div>
-              <div class="f-ring f-ring-2"></div>
-              <div class="f-ring f-ring-3"></div>
+            <div class="vector-particles" id="vector-particles">
+              <div class="v-particle v-p1"></div>
+              <div class="v-particle v-p2"></div>
+              <div class="v-particle v-p3"></div>
+              <div class="v-particle v-p4"></div>
+              <div class="v-particle v-p5"></div>
             </div>
-
-            <!-- Drifting Particles -->
-            <div class="futuristic-particles">
-              <div class="f-particle p1"></div>
-              <div class="f-particle p2"></div>
-              <div class="f-particle p3"></div>
-              <div class="f-particle p4"></div>
-              <div class="f-particle p5"></div>
-            </div>
-
-            <!-- Portrait Wrapper (for Tilt Interaction) -->
-            <div class="portrait-card-wrapper" id="portrait-tilt">
-              <!-- Glassmorphism Halo / Bloom -->
-              <div class="portrait-halo"></div>
-              <div class="portrait-bloom"></div>
-
-              <!-- Main Card with Soft Shadow -->
-              <div class="portrait-card futuristic-card">
-                <img src="assets/images/profile.jpg" alt="Jagadiesh R Portrait">
+            
+            <!-- Frosted Glass Frame -->
+            <div class="vector-glass-frame">
+              <div class="vector-glass-inner"></div>
+              <div class="vector-corner-accents">
+                <span class="v-corner tl"></span>
+                <span class="v-corner tr"></span>
+                <span class="v-corner bl"></span>
+                <span class="v-corner br"></span>
               </div>
             </div>
 
+            <!-- Out-of-bound Character Vector -->
+            <div class="vector-character-wrapper" id="vector-character">
+              <div class="vector-shadow"></div>
+              <img src="assets/images/vector-portrait.png" alt="Jagadiesh R Vector Portrait" class="vector-img">
+            </div>
           </div>
         </div>
       </div>
