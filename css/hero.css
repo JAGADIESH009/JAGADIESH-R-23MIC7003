@@ -198,11 +198,11 @@
 .cinematic-layer { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; overflow: visible; display: flex; justify-content: center; align-items: center; }
 
 /* Layer 1: Base Gradient */
-.layer-1-base-gradient { background: radial-gradient(circle at center, rgba(109, 40, 217, 0.15) 0%, rgba(0, 0, 0, 0.8) 70%, #000 100%); z-index: 1; }
+.layer-1-base-gradient { background: radial-gradient(circle at center, rgba(109, 40, 217, 0.1) 0%, transparent 70%); z-index: 1; }
 
 /* Layer 2: Nebula Haze */
 .layer-2-nebula { z-index: 2; }
-.c-nebula-blob { position: absolute; filter: blur(120px); border-radius: 50%; opacity: 0.3; animation: c-morph 15s infinite alternate ease-in-out; }
+.c-nebula-blob { position: absolute; filter: blur(120px); border-radius: 50%; opacity: 0.15; animation: c-morph 15s infinite alternate ease-in-out; }
 .cb-1 { width: 600px; height: 500px; background: rgba(124, 58, 237, 0.2); top: 5%; left: 5%; }
 .cb-2 { width: 550px; height: 600px; background: rgba(109, 40, 217, 0.15); bottom: 5%; right: 5%; animation-delay: -5s; }
 @keyframes c-morph { 0% { transform: scale(1) rotate(0deg); } 100% { transform: scale(1.1) rotate(20deg); } }
@@ -211,11 +211,11 @@
 
 /* Layer 5: Purple Bloom */
 .layer-5-purple-bloom { z-index: 5; }
-.c-purple-bloom { position: absolute; width: 500px; height: 500px; bottom: 25%; left: 10%; background: radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, rgba(124, 58, 237, 0.1) 40%, transparent 70%); filter: blur(100px); border-radius: 50%; }
+.c-purple-bloom { position: absolute; width: 500px; height: 500px; bottom: 25%; left: 10%; background: radial-gradient(circle, rgba(167, 139, 250, 0.12) 0%, rgba(124, 58, 237, 0.08) 40%, transparent 70%); filter: blur(100px); border-radius: 50%; }
 
 /* Layer 6: Volumetric Rays */
 .layer-6-volumetric { z-index: 6; }
-.c-light-rays { width: 150%; height: 150%; background: conic-gradient(from 180deg at 50% 30%, rgba(167,139,250,0.03) 0deg, transparent 30deg, rgba(167,139,250,0.02) 60deg, transparent 90deg, rgba(167,139,250,0.04) 140deg, transparent 180deg); mask-image: radial-gradient(circle at 50% 30%, black 10%, transparent 70%); -webkit-mask-image: radial-gradient(circle at 50% 30%, black 10%, transparent 70%); opacity: 0.5; }
+.c-light-rays { width: 150%; height: 150%; background: conic-gradient(from 180deg at 50% 30%, rgba(167,139,250,0.02) 0deg, transparent 30deg, rgba(167,139,250,0.01) 60deg, transparent 90deg, rgba(167,139,250,0.03) 140deg, transparent 180deg); mask-image: radial-gradient(circle at 50% 30%, black 10%, transparent 60%); -webkit-mask-image: radial-gradient(circle at 50% 30%, black 10%, transparent 60%); opacity: 0.4; }
 
 /* Layer 7 & 8 & 9: Faint Particles, Stars, Dust */
 .layer-7-stars { z-index: 7; } .layer-8-particles { z-index: 8; transition: transform 0.2s ease-out; } .layer-9-dust { z-index: 9; }
@@ -225,12 +225,12 @@
 .cp-1 { width: 3px; height: 3px; left: 20%; bottom: 0; animation-duration: 11s; background: rgba(167, 139, 250, 0.5); box-shadow: 0 0 10px rgba(167, 139, 250, 0.5); }
 .cp-2 { width: 2px; height: 2px; left: 75%; bottom: -20%; animation-duration: 14s; background: rgba(124, 58, 237, 0.4); box-shadow: 0 0 10px rgba(124, 58, 237, 0.4); }
 .cd-1 { width: 1px; height: 1px; left: 30%; bottom: 10%; animation-duration: 7s; } .cd-2 { width: 1px; height: 1px; left: 70%; bottom: 20%; animation-duration: 10s; }
-@keyframes c-float-up { 0% { transform: translateY(100px); opacity: 0; } 20% { opacity: 0.15; } 80% { opacity: 0.15; } 100% { transform: translateY(-300px); opacity: 0; } }
+@keyframes c-float-up { 0% { transform: translateY(100px); opacity: 0; } 20% { opacity: 0.1; } 80% { opacity: 0.1; } 100% { transform: translateY(-300px); opacity: 0; } }
 
 /* Layer 11: Glowing Platform */
 .layer-11-orbit { z-index: 11; }
 .orbit-waist { top: 60%; width: 460px; height: 130px; transform: rotate(10deg); border-bottom-color: rgba(6, 182, 212, 0.4); z-index: 15; /* in front of character */ }
-.c-ground-platform { position: absolute; bottom: -20px; width: 550px; height: 70px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.3) 0%, rgba(109, 40, 217, 0.1) 40%, transparent 70%); filter: blur(25px); animation: c-orbit-pulse 4s infinite alternate; }
+.c-ground-platform { position: absolute; bottom: -20px; width: 550px; height: 70px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.15) 0%, rgba(109, 40, 217, 0.05) 40%, transparent 70%); filter: blur(25px); animation: c-orbit-pulse 4s infinite alternate; }
 @keyframes c-orbit-pulse { 0% { opacity: 0.6; } 100% { opacity: 1; } }
 
 /* Floating UI Glass Cards */
@@ -249,10 +249,10 @@
   height: 95%; max-height: 85vh; width: auto; object-fit: contain; object-position: bottom center;
   display: block;
   /* Premium Realistic Apple-style Rim Light */
-  filter: drop-shadow(0 0 2px rgba(167,139,250,0.5)) /* Realistic thin Lavender rim */
-          drop-shadow(0 0 15px rgba(124,58,237,0.3)) /* Soft Royal Purple inner bloom */
-          drop-shadow(0 0 50px rgba(109,40,217,0.2)) /* Diffused Deep Violet ambient glow */
-          drop-shadow(0 20px 30px rgba(0,0,0,0.8)); /* Base shadow for grounding */
+  filter: drop-shadow(0 0 2px rgba(167,139,250,0.4)) /* Realistic thin Lavender rim */
+          drop-shadow(0 0 15px rgba(124,58,237,0.2)) /* Soft Royal Purple inner bloom */
+          drop-shadow(0 0 50px rgba(109,40,217,0.15)) /* Diffused Deep Violet ambient glow */
+          drop-shadow(0 20px 30px rgba(0,0,0,0.6)); /* Base shadow for grounding */
   transform-origin: bottom center;
 }
 
@@ -264,7 +264,7 @@
 @keyframes c-spin-ribbon { 0% { transform: rotate(15deg) scaleX(1); opacity: 0; } 50% { transform: rotate(15deg) scaleX(1.1); opacity: 0.8; box-shadow: 0 0 20px rgba(6,182,212,0.5); } 100% { transform: rotate(15deg) scaleX(1); opacity: 0; } }
 
 /* Hover Interactions */
-.borderless-cinematic:hover .c-purple-bloom { background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, rgba(124, 58, 237, 0.15) 40%, transparent 70%); }
+.borderless-cinematic:hover .c-purple-bloom { background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, rgba(124, 58, 237, 0.1) 40%, transparent 70%); }
 .borderless-cinematic:hover .c-glass-chip { opacity: 0.4; }
 .c-magnetic-glow { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(139, 92, 246, 0.4); filter: blur(80px); z-index: 20; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
 .borderless-cinematic:hover .c-magnetic-glow { opacity: 1; }.premium-vector-container:hover .pv-gradient-blob { filter: blur(90px); opacity: 0.9; }
