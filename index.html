@@ -108,35 +108,49 @@
         </div>
         
         <div class="hero-visual reveal">
-          <div class="portrait-card-container">
-            <!-- Background Orbits -->
-            <div class="visual-globe">
-              <div class="globe-ring"></div>
-              <div class="globe-ring"></div>
-              <div class="globe-ring"></div>
-              <div class="orbit-node orbit-node-1"></div>
-              <div class="orbit-node orbit-node-2"></div>
-            </div>
+          <div class="portrait-card-container" id="portrait-container">
             
-            <!-- Slow rotating conic sweep behind card -->
-            <div class="portrait-light-sweep"></div>
+            <!-- Animated Mesh Background -->
+            <div class="futuristic-mesh-bg"></div>
 
-            <!-- Premium Background Layers -->
-            <div class="premium-bg-layers">
-              <div class="aurora-glow-1"></div>
-              <div class="aurora-glow-2"></div>
-              <div class="mesh-grid"></div>
+            <!-- Breathing Radial Glow -->
+            <div class="futuristic-radial-glow"></div>
+
+            <!-- Floating Blurred Orbs (Parallax Layer) -->
+            <div class="futuristic-orbs-layer parallax-bg">
+              <div class="f-orb f-orb-1"></div>
+              <div class="f-orb f-orb-2"></div>
+              <div class="f-orb f-orb-3"></div>
             </div>
 
-            <!-- Soft background purple glow -->
-            <div class="portrait-bg-glow"></div>
-            <div class="portrait-card-wrapper">
-              <!-- Portrait Card with 3D tilt -->
-              <div class="portrait-card glass-card tilt-card">
-                <!-- Portrait picture relocated to assets/images/ -->
+            <!-- Animated Glowing Rings -->
+            <div class="futuristic-rings-layer">
+              <div class="f-ring f-ring-1"></div>
+              <div class="f-ring f-ring-2"></div>
+              <div class="f-ring f-ring-3"></div>
+            </div>
+
+            <!-- Drifting Particles -->
+            <div class="futuristic-particles">
+              <div class="f-particle p1"></div>
+              <div class="f-particle p2"></div>
+              <div class="f-particle p3"></div>
+              <div class="f-particle p4"></div>
+              <div class="f-particle p5"></div>
+            </div>
+
+            <!-- Portrait Wrapper (for Tilt Interaction) -->
+            <div class="portrait-card-wrapper" id="portrait-tilt">
+              <!-- Glassmorphism Halo / Bloom -->
+              <div class="portrait-halo"></div>
+              <div class="portrait-bloom"></div>
+
+              <!-- Main Card with Soft Shadow -->
+              <div class="portrait-card futuristic-card">
                 <img src="assets/images/profile.jpg" alt="Jagadiesh R Portrait">
               </div>
             </div>
+            
           </div>
         </div>
       </div>

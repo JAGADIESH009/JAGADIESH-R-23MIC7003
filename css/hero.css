@@ -76,58 +76,85 @@
 }
 @keyframes ripple-anim { to { transform: translate(-50%, -50%) scale(4); opacity: 0; } }
 
-/* Visual Orbit */
+/* ==========================================================================
+   FUTURISTIC PROFILE VISUALS
+   ========================================================================== */
 .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
 .portrait-card-container {
   position: relative; width: 100%; max-width: 440px; height: 480px;
   display: flex; justify-content: center; align-items: center;
+  perspective: 1000px;
 }
 
-/* Background orbits */
-.visual-globe {
-  width: 420px; height: 420px; position: absolute;
-  top: calc(50% - 210px); left: calc(50% - 210px);
-  transform-style: preserve-3d; animation: rotate-globe 30s infinite linear;
-  z-index: 1; pointer-events: none;
-}
-.globe-ring {
+/* Animated Mesh Background */
+.futuristic-mesh-bg {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  border: 1px dashed rgba(139, 92, 246, 0.12); border-radius: 50%;
+  background: radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+              radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+  filter: blur(20px); z-index: 1; pointer-events: none;
+  animation: mesh-shift 15s infinite alternate ease-in-out;
 }
-.globe-ring:nth-child(1) {
-  transform: rotateX(75deg) rotateY(15deg); border-color: rgba(139, 92, 246, 0.2);
-  border-style: solid; animation: spin-ring-1 15s infinite linear;
-}
-.globe-ring:nth-child(2) {
-  transform: rotateX(45deg) rotateY(-45deg); border-color: rgba(59, 130, 246, 0.15);
-  animation: spin-ring-2 20s infinite linear reverse;
-}
-.globe-ring:nth-child(3) {
-  transform: rotateX(60deg) rotateY(45deg); border-color: rgba(6, 182, 212, 0.1);
-  animation: spin-ring-3 25s infinite linear;
-}
+@keyframes mesh-shift { 0% { opacity: 0.5; } 100% { opacity: 1; transform: scale(1.1); } }
 
-/* Rotating light sweep aura */
-.portrait-light-sweep {
-  position: absolute; width: 120%; height: 120%;
-  background: conic-gradient(from 0deg, transparent 40%, rgba(139, 92, 246, 0.05) 50%, transparent 60%);
-  animation: sweep-rotate 12s infinite linear;
-  z-index: 2; pointer-events: none; border-radius: 50%;
-}
-@keyframes sweep-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.portrait-bg-glow {
+/* Breathing Radial Glow */
+.futuristic-radial-glow {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 320px; height: 320px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+  width: 350px; height: 350px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(6, 182, 212, 0.1) 40%, transparent 70%);
   filter: blur(40px); z-index: 2; pointer-events: none;
+  animation: breathe-glow 7s infinite alternate ease-in-out;
+}
+@keyframes breathe-glow { 0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; } 100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; } }
+
+/* Floating Blurred Orbs (Parallax) */
+.futuristic-orbs-layer {
+  position: absolute; width: 120%; height: 120%; top: -10%; left: -10%;
+  z-index: 3; pointer-events: none;
+  transition: transform 0.1s ease-out; /* Parallax smooth catchup */
+}
+.f-orb { position: absolute; border-radius: 50%; filter: blur(50px); animation: drift-orb 12s infinite alternate ease-in-out; }
+.f-orb-1 { width: 200px; height: 200px; background: rgba(139, 92, 246, 0.15); top: 10%; left: 10%; }
+.f-orb-2 { width: 250px; height: 250px; background: rgba(6, 182, 212, 0.12); bottom: 10%; right: 5%; animation-delay: -3s; animation-duration: 15s; }
+.f-orb-3 { width: 150px; height: 150px; background: rgba(59, 130, 246, 0.15); top: 40%; right: 20%; animation-delay: -6s; animation-duration: 10s; }
+@keyframes drift-orb { 0% { transform: translate(0, 0); } 100% { transform: translate(30px, -30px); } }
+
+/* Animated Glowing Rings */
+.futuristic-rings-layer {
+  position: absolute; top: 50%; left: 50%; width: 420px; height: 420px;
+  transform: translate(-50%, -50%); z-index: 4; pointer-events: none;
+}
+.f-ring {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  border-radius: 50%; border: 1px solid transparent;
+}
+.f-ring-1 { width: 100%; height: 100%; border-top: 1px solid rgba(139, 92, 246, 0.4); border-bottom: 1px solid rgba(6, 182, 212, 0.2); animation: spin-ring-f 20s linear infinite; }
+.f-ring-2 { width: 85%; height: 85%; border-left: 1px solid rgba(6, 182, 212, 0.4); border-right: 1px dashed rgba(139, 92, 246, 0.2); animation: spin-ring-f 15s linear infinite reverse; }
+.f-ring-3 { width: 115%; height: 115%; border-top: 1px dashed rgba(139, 92, 246, 0.15); animation: spin-ring-f 30s linear infinite; }
+@keyframes spin-ring-f { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+/* Drifting Particles */
+.futuristic-particles {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; pointer-events: none;
+}
+.f-particle { position: absolute; border-radius: 50%; background: #fff; box-shadow: 0 0 10px #fff; animation: float-particle 10s infinite linear; opacity: 0; }
+.p1 { width: 3px; height: 3px; top: 20%; left: 20%; animation-duration: 12s; background: var(--accent-purple); box-shadow: 0 0 8px var(--accent-purple); }
+.p2 { width: 2px; height: 2px; top: 70%; left: 10%; animation-duration: 15s; animation-delay: 2s; background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
+.p3 { width: 4px; height: 4px; top: 40%; right: 15%; animation-duration: 18s; animation-delay: 5s; }
+.p4 { width: 2.5px; height: 2.5px; bottom: 20%; right: 30%; animation-duration: 11s; animation-delay: 7s; background: var(--accent-blue); box-shadow: 0 0 8px var(--accent-blue); }
+.p5 { width: 3.5px; height: 3.5px; top: 10%; right: 40%; animation-duration: 14s; animation-delay: 9s; }
+@keyframes float-particle {
+  0% { transform: translateY(20px); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-40px); opacity: 0; }
 }
 
+/* Portrait Card & Tilt Logic */
 .portrait-card-wrapper {
-  position: relative; z-index: 3;
+  position: relative; z-index: 10;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.1s ease-out; /* smooth catch-up for JS */
+  /* Float animation when not hovered */
   animation: float-slow-card 6s infinite ease-in-out;
 }
 @keyframes float-slow-card {
@@ -135,86 +162,64 @@
   50% { transform: translateY(-8px); }
 }
 
-.portrait-card {
+/* Glassmorphism Halo & Bloom */
+.portrait-halo {
+  position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 36px;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(-20px); /* Pushed back in 3D space */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: all var(--transition-normal);
+}
+.portrait-bloom {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 32px;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+  transform: translateZ(-10px);
+  transition: all var(--transition-normal);
+}
+
+/* Main Card & Image */
+.portrait-card.futuristic-card {
   width: 320px; height: 430px; border-radius: 32px;
-  background: rgba(10, 8, 22, 0.5); border: 1px solid rgba(139, 92, 246, 0.22);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(139, 92, 246, 0.04);
-  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  background: rgba(10, 8, 22, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.3);
   position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  transform: translateZ(20px); /* Popped forward */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
+  transition: all var(--transition-normal);
 }
-.portrait-card::after {
+.portrait-card.futuristic-card::after {
   content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 32px;
-  border: 1.5px solid rgba(139, 92, 246, 0.3);
-  box-shadow: inset 0 0 30px rgba(139, 92, 246, 0.2), 0 0 20px rgba(139, 92, 246, 0.05);
+  box-shadow: inset 0 0 30px rgba(139, 92, 246, 0.3), inset 0 0 10px rgba(255,255,255,0.05);
   pointer-events: none; z-index: 4;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
-.portrait-card:hover::after {
-  border-color: rgba(6, 182, 212, 0.4);
-  box-shadow: inset 0 0 35px rgba(6, 182, 212, 0.3), 0 0 25px rgba(6, 182, 212, 0.1);
-}
-.portrait-card img {
+.portrait-card.futuristic-card img {
   width: 100%; height: 100%; border-radius: 32px; object-fit: cover; object-position: center 20%;
-  display: block; filter: grayscale(10%) brightness(0.85) contrast(1.1);
+  display: block; filter: grayscale(10%) brightness(0.9) contrast(1.1);
   transition: transform var(--transition-normal), filter var(--transition-normal);
 }
-.portrait-card:hover img { transform: scale(1.03); filter: grayscale(0%) brightness(0.95) contrast(1.05); }
 
-/* Premium Background Layers */
-.premium-bg-layers {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  height: 500px;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  pointer-events: none;
+/* Hover States (controlled by container hover) */
+.portrait-card-container:hover .futuristic-radial-glow {
+  opacity: 0.8; filter: blur(50px); transform: translate(-50%, -50%) scale(1.1);
 }
-.aurora-glow-1 {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-  filter: blur(50px);
-  animation: float-aurora-1 8s infinite alternate ease-in-out;
+.portrait-card-container:hover .portrait-card.futuristic-card img {
+  transform: scale(1.03); filter: grayscale(0%) brightness(1) contrast(1.05);
 }
-.aurora-glow-2 {
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, transparent 70%);
-  filter: blur(40px);
-  animation: float-aurora-2 10s infinite alternate-reverse ease-in-out;
+.portrait-card-container:hover .f-ring-1,
+.portrait-card-container:hover .f-ring-2,
+.portrait-card-container:hover .f-ring-3 {
+  animation-duration: 8s; /* Speed up rings */
 }
-.mesh-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  mask-image: radial-gradient(circle, black 30%, transparent 70%);
-  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
-  opacity: 0.5;
-  animation: rotate-mesh 40s linear infinite;
+.portrait-card-container:hover .portrait-bloom {
+  box-shadow: 0 0 60px rgba(6, 182, 212, 0.4);
 }
-
-@keyframes float-aurora-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30px, -20px) scale(1.1); }
+.portrait-card-container:hover .portrait-halo {
+  border-color: rgba(6, 182, 212, 0.3);
 }
-@keyframes float-aurora-2 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-20px, 30px) scale(1.2); }
-}
-@keyframes rotate-mesh {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.portrait-card-container:hover .portrait-card-wrapper {
+  animation-play-state: paused; /* Pause floating while tilting */
 }
