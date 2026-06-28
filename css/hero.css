@@ -308,8 +308,8 @@
 }
 
 .pv-img {
-  width: 130%; height: 130%; object-fit: contain; object-position: bottom center;
-  margin-bottom: -15%; margin-top: -10%;
+  width: 115%; height: 115%; object-fit: contain; object-position: bottom center;
+  margin-bottom: -5%; margin-top: -5%;
   display: block; filter: drop-shadow(0 25px 35px rgba(0,0,0,0.8)) drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
   transition: filter var(--transition-normal), transform var(--transition-normal); z-index: 2;
 }
