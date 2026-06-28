@@ -209,7 +209,7 @@
 
 /* Layer 3: Massive Halo */
 .layer-3-halo { z-index: 3; }
-.c-massive-halo { width: 660px; height: 660px; background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 80%); filter: blur(120px); border-radius: 50%; }
+.c-massive-halo { width: 660px; height: 660px; background: radial-gradient(circle, rgba(124, 58, 237, 0.6) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 80%); filter: blur(120px); border-radius: 50%; }
 
 /* Layer 4: Blue Glow */
 .layer-4-blue-glow { z-index: 4; }
@@ -217,7 +217,7 @@
 
 /* Layer 5: Purple Bloom */
 .layer-5-purple-bloom { z-index: 5; }
-.c-purple-bloom { position: absolute; width: 400px; height: 400px; bottom: 20%; left: 15%; background: rgba(168, 85, 247, 0.35); filter: blur(100px); border-radius: 50%; }
+.c-purple-bloom { position: absolute; width: 400px; height: 400px; bottom: 20%; left: 15%; background: rgba(124, 58, 237, 0.35); filter: blur(100px); border-radius: 50%; }
 
 /* Layer 6: Volumetric Rays */
 .layer-6-volumetric { z-index: 6; }
@@ -267,11 +267,11 @@
 .c-hero-img {
   height: 95%; max-height: 85vh; width: auto; object-fit: contain; object-position: bottom center;
   display: block;
-  /* Complex Rim Lighting & Drop Shadows directly on the PNG */
-  filter: drop-shadow(0 0 15px rgba(168,85,247,0.6)) /* Purple rim */
-          drop-shadow(0 0 40px rgba(59,130,246,0.4)) /* Blue halo */
-          drop-shadow(0 0 80px rgba(168,85,247,0.2)) /* Ambient glow */
-          drop-shadow(0 20px 30px rgba(0,0,0,0.8)); /* Base shadow */
+  /* Premium Soft Purple Rim Light & Bloom */
+  filter: drop-shadow(0 0 4px rgba(168,85,247,0.8)) /* Thin neon purple rim */
+          drop-shadow(0 0 25px rgba(124,58,237,0.5)) /* Deep violet inner bloom */
+          drop-shadow(0 0 70px rgba(124,58,237,0.3)) /* Diffused violet ambient glow */
+          drop-shadow(0 20px 30px rgba(0,0,0,0.7)); /* Base shadow */
   transform-origin: bottom center;
 }
 
