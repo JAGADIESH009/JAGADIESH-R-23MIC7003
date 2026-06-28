@@ -1,0 +1,20 @@
+/* Footer Section */
+.footer { padding: 4rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); position: relative; z-index: 10; background: rgba(5, 5, 10, 0.8); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+.footer-copy { font-size: 0.9rem; color: var(--text-muted); }
+
+.footer-badge-list { display: flex; gap: 1rem; }
+.footer-badge {
+  font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 100px;
+  background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-muted);
+}
+
+.back-to-top {
+  width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex; justify-content: center; align-items: center; color: var(--text-secondary); transition: all var(--transition-normal);
+}
+.back-to-top:hover {
+  background: var(--accent-cyan); border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px var(--accent-cyan-glow); transform: translateY(-3px);
+}
+.back-to-top svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; }

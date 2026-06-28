@@ -1,0 +1,45 @@
+/* Header & Navbar */
+.header {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 80px; z-index: 1000;
+  display: flex; align-items: center;
+  transition: background-color var(--transition-normal), border-bottom var(--transition-normal), height var(--transition-normal);
+  border-bottom: 1px solid transparent;
+}
+.header.scrolled {
+  background-color: rgba(3, 0, 20, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  height: 72px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header-nav { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.logo {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #fff 40%, var(--accent-purple) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.logo-dot {
+  width: 8px; height: 8px; background-color: var(--accent-purple); border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent-purple); animation: pulse-glow 2s infinite;
+}
+.nav-list { display: flex; gap: 2.5rem; align-items: center; list-style: none; padding: 0; margin: 0; }
+.nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); position: relative; padding: 0.5rem 0; }
+.nav-link:hover { color: var(--text-primary); }
+.nav-link::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+  transition: width var(--transition-fast); border-radius: 2px;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--text-primary); }
+
+/* Mobile nav button */
+.menu-toggle {
+  display: none; flex-direction: column; justify-content: space-between;
+  width: 24px; height: 18px; background: transparent; border: none; z-index: 1100;
+}
+.menu-bar { width: 100%; height: 2px; background-color: var(--text-primary); transition: all var(--transition-normal); border-radius: 2px; }

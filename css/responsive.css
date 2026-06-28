@@ -1,0 +1,50 @@
+/* Responsive Breakpoints & Layout Adapters */
+
+@media (max-width: 992px) {
+  .section { padding: 7rem 0; }
+  .section-title { font-size: 2.2rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  .section { padding: 6rem 0; }
+  .section-title { font-size: 2rem; }
+  .hero-title { font-size: 3rem; }
+  .hero-subtitle { font-size: 1.5rem; }
+  .portrait-card-container { max-width: 320px; height: 380px; }
+  .portrait-card { width: 250px; height: 330px; border-radius: 24px; }
+  .portrait-card::after { border-radius: 24px; }
+  .portrait-card img { border-radius: 24px; }
+  .visual-globe { width: 330px; height: 330px; top: calc(50% - 165px); left: calc(50% - 165px); }
+  
+  /* Timeline lines shifts */
+  .timeline-line, .timeline-fill-line { left: 20px; }
+  .timeline-dot { left: 9px; }
+  .timeline-item { padding-left: 50px; }
+  
+  .menu-toggle { display: flex; }
+  .nav-list {
+    position: fixed; top: 0; right: -100%; width: 80%; max-width: 300px; height: 100vh;
+    background-color: rgba(3, 0, 20, 0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.05); flex-direction: column;
+    justify-content: center; align-items: flex-start; padding: 4rem; gap: 2.5rem;
+    transition: right var(--transition-normal);
+  }
+  .nav-list.open { right: 0; }
+  .nav-link { font-size: 1.25rem; }
+  .menu-toggle.open .menu-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle.open .menu-bar:nth-child(2) { opacity: 0; }
+  .menu-toggle.open .menu-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  
+  .footer-content { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 5rem 0; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1.25rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 2.5rem 1.25rem; }
+}
