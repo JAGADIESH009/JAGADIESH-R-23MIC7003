@@ -189,7 +189,7 @@
 .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; width: 100%; height: 100%; }
 
 .borderless-cinematic {
-  position: relative; width: 100%; height: 85vh; /* Massive scale */
+  position: relative; width: 100%; height: 75vh; /* Balanced scale */
   max-width: none; display: flex; justify-content: center; align-items: flex-end;
   pointer-events: auto;
 }
@@ -208,7 +208,7 @@
 
 /* Layer 3: Massive Halo */
 .layer-3-halo { z-index: 3; }
-.c-massive-halo { width: 750px; height: 750px; background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 80%); filter: blur(150px); border-radius: 50%; }
+.c-massive-halo { width: 600px; height: 600px; background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 80%); filter: blur(120px); border-radius: 50%; }
 
 /* Layer 4: Blue Glow */
 .layer-4-blue-glow { z-index: 4; }
@@ -235,16 +235,16 @@
 /* Layer 10: HUD Circles */
 .layer-10-hud { z-index: 10; }
 .c-hud-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.05); }
-.hr-1 { width: 650px; height: 650px; border-style: dashed; border-color: rgba(139, 92, 246, 0.3); animation: c-spin 40s linear infinite; }
-.hr-2 { width: 550px; height: 550px; border-width: 2px; border-left-color: transparent; border-right-color: transparent; border-top-color: rgba(6, 182, 212, 0.3); animation: c-spin 25s linear infinite reverse; }
+.hr-1 { width: 550px; height: 550px; border-style: dashed; border-color: rgba(139, 92, 246, 0.3); animation: c-spin 40s linear infinite; }
+.hr-2 { width: 450px; height: 450px; border-width: 2px; border-left-color: transparent; border-right-color: transparent; border-top-color: rgba(6, 182, 212, 0.3); animation: c-spin 25s linear infinite reverse; }
 @keyframes c-spin { to { transform: rotate(360deg); } }
 
 /* Layer 11: Orbit & Platform */
 .layer-11-orbit { z-index: 11; }
-.c-orbit-line { position: absolute; width: 600px; height: 200px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 0 20px rgba(139,92,246,0.1); }
+.c-orbit-line { position: absolute; width: 500px; height: 160px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 0 20px rgba(139,92,246,0.1); }
 .orbit-back { top: 40%; transform: rotate(-15deg); border-top-color: rgba(139, 92, 246, 0.4); animation: c-orbit-pulse 5s infinite alternate; }
-.orbit-waist { top: 60%; width: 500px; height: 150px; transform: rotate(10deg); border-bottom-color: rgba(6, 182, 212, 0.4); z-index: 15; /* in front of character */ }
-.c-ground-platform { position: absolute; bottom: -20px; width: 600px; height: 80px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.7) 0%, rgba(59, 130, 246, 0.3) 40%, transparent 70%); filter: blur(20px); animation: c-orbit-pulse 3s infinite alternate; }
+.orbit-waist { top: 60%; width: 420px; height: 120px; transform: rotate(10deg); border-bottom-color: rgba(6, 182, 212, 0.4); z-index: 15; /* in front of character */ }
+.c-ground-platform { position: absolute; bottom: -20px; width: 500px; height: 60px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.7) 0%, rgba(59, 130, 246, 0.3) 40%, transparent 70%); filter: blur(20px); animation: c-orbit-pulse 3s infinite alternate; }
 @keyframes c-orbit-pulse { 0% { opacity: 0.4; } 100% { opacity: 0.9; box-shadow: 0 0 30px rgba(139,92,246,0.3); } }
 
 /* Layer 12: Digital Grid */
@@ -264,7 +264,7 @@
 .layer-13-portrait { z-index: 13; align-items: flex-end; /* Anchor to bottom */ padding-bottom: 20px; transition: transform 0.1s ease-out; }
 .c-character-wrapper { position: relative; height: 100%; display: flex; justify-content: center; align-items: flex-end; }
 .c-hero-img {
-  height: 100%; max-height: 95vh; width: auto; object-fit: contain; object-position: bottom center;
+  height: 85%; max-height: 75vh; width: auto; object-fit: contain; object-position: bottom center;
   display: block;
   /* Complex Rim Lighting & Drop Shadows directly on the PNG */
   filter: drop-shadow(0 0 15px rgba(168,85,247,0.6)) /* Purple rim */
@@ -277,8 +277,8 @@
 /* Layer 14: Foreground Ribbons */
 .layer-14-foreground { z-index: 14; transition: transform 0.1s ease-out; }
 .c-energy-ribbon { position: absolute; border-radius: 50%; filter: blur(2px); }
-.ribbon-1 { width: 700px; height: 250px; top: 55%; border-top: 2px solid rgba(6,182,212,0.8); transform: rotate(15deg); animation: c-spin-ribbon 10s linear infinite; }
-.ribbon-2 { width: 600px; height: 200px; top: 35%; border-bottom: 2px solid rgba(139,92,246,0.8); transform: rotate(-15deg); animation: c-spin-ribbon 12s linear infinite reverse; }
+.ribbon-1 { width: 550px; height: 200px; top: 55%; border-top: 2px solid rgba(6,182,212,0.8); transform: rotate(15deg); animation: c-spin-ribbon 10s linear infinite; }
+.ribbon-2 { width: 450px; height: 150px; top: 35%; border-bottom: 2px solid rgba(139,92,246,0.8); transform: rotate(-15deg); animation: c-spin-ribbon 12s linear infinite reverse; }
 @keyframes c-spin-ribbon { 0% { transform: rotate(15deg) scaleX(1); opacity: 0; } 50% { transform: rotate(15deg) scaleX(1.1); opacity: 0.8; box-shadow: 0 0 20px rgba(6,182,212,0.5); } 100% { transform: rotate(15deg) scaleX(1); opacity: 0; } }
 
 /* Hover Interactions */
