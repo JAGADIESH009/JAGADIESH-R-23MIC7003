@@ -115,86 +115,111 @@
         </div>
 
         <div class="hero-visual reveal">
-          <div class="premium-vector-container" id="vector-parallax-container">
+          <div class="premium-vector-container borderless-cinematic" id="vector-parallax-container">
             
-            <!-- Layer 1: Background Gradient & Glow -->
-            <div class="pv-layer-1-bg">
-              <div class="pv-bg-glow"></div>
-              <div class="pv-secondary-bloom"></div>
-              <div class="pv-ground-glow"></div>
-              <div class="pv-volumetric-rays"></div>
+            <!-- Layer 1: Dark purple gradient -->
+            <div class="cinematic-layer layer-1-base-gradient"></div>
+
+            <!-- Layer 2: Large purple nebula -->
+            <div class="cinematic-layer layer-2-nebula">
+              <div class="c-nebula-blob cb-1"></div>
+              <div class="c-nebula-blob cb-2"></div>
             </div>
 
-            <!-- Layer 2: Nebula & Fog -->
-            <div class="pv-layer-2-nebula">
-              <div class="pv-gradient-blob pb-1"></div>
-              <div class="pv-gradient-blob pb-2"></div>
-              <div class="pv-depth-fog"></div>
-            </div>
-            
-            <!-- Layer 3: Orbit Rings & Wireframes -->
-            <div class="pv-layer-3-hud">
-              <div class="pv-hud-circle hc-1"></div>
-              <div class="pv-hud-circle hc-2"></div>
-              <div class="pv-hud-circle hc-3"></div>
-              <div class="pv-wireframe-grid"></div>
-            </div>
-            
-            <!-- Layer 4: Floating Tech Particles & Cubes -->
-            <div class="pv-layer-4-particles" id="vector-particles">
-              <!-- Digital Dust / Stars -->
-              <div class="pv-star ps-1"></div>
-              <div class="pv-star ps-2"></div>
-              <div class="pv-star ps-3"></div>
-              <div class="pv-star ps-4"></div>
-              <div class="pv-star ps-5"></div>
-              
-              <!-- Floating Cubes -->
-              <div class="pv-cube pc-1"></div>
-              <div class="pv-cube pc-2"></div>
-
-              <!-- Tech Symbols -->
-              <div class="pv-symbol pv-s-code">&lt; /&gt;</div>
-              <div class="pv-symbol pv-s-brace">{ }</div>
-              <div class="pv-symbol pv-s-ai">AI</div>
-              <div class="pv-symbol pv-s-js">JS</div>
-              <div class="pv-symbol pv-s-react">React</div>
-              <div class="pv-symbol pv-s-node">Node</div>
-              <div class="pv-symbol pv-s-py">Python</div>
-              <div class="pv-symbol pv-s-db">🗄️</div>
-              <div class="pv-symbol pv-s-api">⚙️</div>
+            <!-- Layer 3: Massive glowing circular halo -->
+            <div class="cinematic-layer layer-3-halo">
+              <div class="c-massive-halo"></div>
             </div>
 
-            <!-- Glassmorphism Container Frame (Behind Vector) -->
-            <div class="pv-glass-card">
-              <div class="pv-glass-inner"></div>
-              <div class="pv-neon-border"></div>
-              <div class="pv-corners">
-                <span class="pvc tl"></span>
-                <span class="pvc tr"></span>
-                <span class="pvc bl"></span>
-                <span class="pvc br"></span>
+            <!-- Layer 4: Blue radial glow -->
+            <div class="cinematic-layer layer-4-blue-glow">
+              <div class="c-blue-glow"></div>
+            </div>
+
+            <!-- Layer 5: Purple bloom -->
+            <div class="cinematic-layer layer-5-purple-bloom">
+              <div class="c-purple-bloom"></div>
+            </div>
+
+            <!-- Layer 6: Volumetric light rays -->
+            <div class="cinematic-layer layer-6-volumetric">
+              <div class="c-light-rays"></div>
+            </div>
+
+            <!-- Layer 7: Floating stars -->
+            <div class="cinematic-layer layer-7-stars">
+              <div class="c-star cs-1"></div>
+              <div class="c-star cs-2"></div>
+              <div class="c-star cs-3"></div>
+              <div class="c-star cs-4"></div>
+              <div class="c-star cs-5"></div>
+              <div class="c-star cs-6"></div>
+            </div>
+
+            <!-- Layer 8: Animated particles -->
+            <div class="cinematic-layer layer-8-particles" id="c-particles">
+              <div class="c-particle cp-1"></div>
+              <div class="c-particle cp-2"></div>
+              <div class="c-particle cp-3"></div>
+              <div class="c-particle cp-4"></div>
+            </div>
+
+            <!-- Layer 9: Tiny glowing dust -->
+            <div class="cinematic-layer layer-9-dust">
+              <div class="c-dust cd-1"></div>
+              <div class="c-dust cd-2"></div>
+              <div class="c-dust cd-3"></div>
+            </div>
+
+            <!-- Layer 10: Thin HUD circles -->
+            <div class="cinematic-layer layer-10-hud">
+              <div class="c-hud-ring hr-1"></div>
+              <div class="c-hud-ring hr-2"></div>
+            </div>
+
+            <!-- Layer 11: Orbit graphics & Glowing Platform -->
+            <div class="cinematic-layer layer-11-orbit">
+              <div class="c-orbit-line orbit-back"></div>
+              <div class="c-orbit-line orbit-waist"></div>
+              <div class="c-orbit-line orbit-below"></div>
+              <div class="c-ground-platform"></div>
+            </div>
+
+            <!-- Layer 12: Subtle digital grid -->
+            <div class="cinematic-layer layer-12-grid">
+              <div class="c-digital-grid"></div>
+            </div>
+
+            <!-- Floating UI Glass Cards -->
+            <div class="cinematic-layer c-ui-layer" id="c-ui-elements">
+              <div class="c-glass-chip ui-1">&lt; /&gt;</div>
+              <div class="c-glass-chip ui-2">{ }</div>
+              <div class="c-glass-chip ui-3">React</div>
+              <div class="c-glass-chip ui-4">Node</div>
+              <div class="c-glass-chip ui-5">Python</div>
+              <div class="c-glass-chip ui-6">AI</div>
+              <div class="c-glass-chip ui-7">Cloud</div>
+              <div class="c-glass-chip ui-8">API</div>
+              <div class="c-glass-chip ui-9">Git</div>
+              <div class="c-glass-chip ui-10">Docker</div>
+              <div class="c-glass-chip ui-11">Database</div>
+            </div>
+
+            <!-- The Portrait Layer (Layer 13 logically) -->
+            <div class="cinematic-layer layer-13-portrait">
+              <div class="c-character-wrapper" id="c-character">
+                <img src="assets/images/profile.jpg" alt="Jagadiesh R - Developer" class="c-hero-img">
               </div>
             </div>
 
-            <!-- Magnetic Hover Target & Glow -->
-            <div class="pv-magnetic-glow" id="pv-magnetic-glow"></div>
-
-            <!-- Layer 5: The Uploaded Vector Image -->
-            <div class="pv-layer-5-portrait pv-character-wrapper" id="vector-character">
-              <div class="pv-character-shadow"></div>
-              <div class="pv-blue-backlight"></div>
-              <div class="pv-purple-rim-glow"></div>
-              <img src="assets/images/profile.jpg" alt="Jagadiesh R Vector Portrait" class="pv-img">
+            <!-- Foreground Energy Ribbons (Layer 14) -->
+            <div class="cinematic-layer layer-14-foreground" id="c-foreground">
+              <div class="c-energy-ribbon ribbon-1"></div>
+              <div class="c-energy-ribbon ribbon-2"></div>
             </div>
 
-            <!-- Layer 6: Foreground Enhancements -->
-            <div class="pv-layer-6-foreground" id="vector-foreground">
-              <div class="pv-orbit-line"></div>
-              <div class="pv-energy-ring"></div>
-              <div class="pv-volumetric-rays"></div>
-            </div>
-
+            <!-- Magnetic Hover Glow -->
+            <div class="c-magnetic-glow" id="c-magnetic-glow"></div>
           </div>
         </div>
       </div>

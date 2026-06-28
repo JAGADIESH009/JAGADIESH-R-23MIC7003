@@ -37,15 +37,16 @@ function initRippleEffects() {
   });
 }
 
-// Cinematic 6-Layer Parallax and Tilt interaction
+// Cinematic 12-Layer Parallax and Tilt interaction
 function initVectorParallax() {
   try {
     const container = document.getElementById('vector-parallax-container');
-    const character = document.getElementById('vector-character');
-    const particles = document.getElementById('vector-particles');
-    const hud = document.querySelector('.pv-layer-3-hud');
-    const foreground = document.getElementById('vector-foreground');
-    const glow = document.getElementById('pv-magnetic-glow');
+    const character = document.getElementById('c-character');
+    const particles = document.getElementById('c-particles');
+    const hud = document.querySelector('.layer-10-hud');
+    const ui = document.getElementById('c-ui-elements');
+    const foreground = document.getElementById('c-foreground');
+    const glow = document.getElementById('c-magnetic-glow');
     
     if (!container || !character) return;
     
@@ -70,11 +71,17 @@ function initVectorParallax() {
         hud.style.transform = `translate(${hX}px, ${hY}px)`;
       }
 
-      // Particles shift heavily in opposite direction
+      // Particles and UI chips shift heavily in opposite direction
       if (particles) {
         const pX = ((x - centerX) / centerX) * -15;
         const pY = ((y - centerY) / centerY) * -15;
         particles.style.transform = `translate(${pX}px, ${pY}px)`;
+      }
+      
+      if (ui) {
+        const uX = ((x - centerX) / centerX) * -25;
+        const uY = ((y - centerY) / centerY) * -25;
+        ui.style.transform = `translate(${uX}px, ${uY}px)`;
       }
 
       // Foreground elements shift WITH the cursor (moves in front of portrait)
@@ -85,9 +92,9 @@ function initVectorParallax() {
       }
 
       if (glow) {
-        // Adjust by half the width/height of the glow (140/2 = 70) so cursor is centered
-        glow.style.left = `${x - 70}px`;
-        glow.style.top = `${y - 70}px`;
+        // Adjust by half the width/height of the glow (200/2 = 100) so cursor is centered
+        glow.style.left = `${x - 100}px`;
+        glow.style.top = `${y - 100}px`;
       }
     });
     
@@ -95,6 +102,7 @@ function initVectorParallax() {
       character.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
       if (hud) hud.style.transform = `translate(0px, 0px)`;
       if (particles) particles.style.transform = `translate(0px, 0px)`;
+      if (ui) ui.style.transform = `translate(0px, 0px)`;
       if (foreground) foreground.style.transform = `translate(0px, 0px)`;
     });
   } catch (err) {
