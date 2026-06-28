@@ -1,29 +1,136 @@
-// Submit actions and confetti blasts
-function handleFormSubmit(e) {
+let isSubmitting = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('portfolio-form');
+  if (form) {
+    form.addEventListener('submit', handleFormSubmit);
+  }
+});
+
+async function handleFormSubmit(e) {
   e.preventDefault();
+  
+  // Prevent duplicate submissions
+  if (isSubmitting) return;
+
+  const form = document.getElementById('portfolio-form');
   const submitBtn = document.querySelector('.btn-submit');
   const successOverlay = document.getElementById('form-success');
-  if (!submitBtn || !successOverlay) return;
+  const errorOverlay = document.getElementById('form-error');
   
-  submitBtn.textContent = 'Sending Message...';
+  if (!form || !submitBtn) return;
+
+  // Clear previous errors
+  document.querySelectorAll('.inline-error').forEach(el => {
+    el.textContent = '';
+    el.classList.remove('show');
+  });
+  document.querySelectorAll('.form-input').forEach(el => el.classList.remove('input-error'));
+
+  // Get field values
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const subjectInput = document.getElementById('subject');
+  const messageInput = document.getElementById('message');
+
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const subject = subjectInput.value.trim();
+  const message = messageInput.value.trim();
+
+  let hasError = false;
+
+  // Inline Validation
+  if (!name) {
+    showError(nameInput, 'Name is required');
+    hasError = true;
+  }
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email) {
+    showError(emailInput, 'Email is required');
+    hasError = true;
+  } else if (!emailRegex.test(email)) {
+    showError(emailInput, 'Please enter a valid email address');
+    hasError = true;
+  }
+
+  if (!subject) {
+    showError(subjectInput, 'Subject is required');
+    hasError = true;
+  }
+
+  if (!message) {
+    showError(messageInput, 'Message cannot be empty');
+    hasError = true;
+  }
+
+  // Halt submission if there are validation errors
+  if (hasError) return;
+
+  // Proceed with submission (Loading State)
+  isSubmitting = true;
+  submitBtn.classList.add('loading');
   submitBtn.disabled = true;
-  
-  setTimeout(() => {
-    successOverlay.classList.add('active');
+
+  try {
+    // Construct template parameters mapping to email requirements
+    const templateParams = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+      date_time: new Date().toLocaleString()
+    };
+
+    // TODO: Replace with your actual Service ID and Template ID
+    const SERVICE_ID = "YOUR_SERVICE_ID"; 
+    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+    // Call EmailJS API
+    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
     
-    // Confetti particles emitter
-    spawnSuccessParticles(submitBtn);
+    if (response.status === 200) {
+      if (successOverlay) successOverlay.classList.add('active');
+      spawnSuccessParticles(submitBtn);
+      form.reset();
+      
+      // Auto-hide success overlay
+      setTimeout(() => {
+        if (successOverlay) successOverlay.classList.remove('active');
+      }, 5000);
+    } else {
+      throw new Error('EmailJS returned non-200 status');
+    }
     
-    document.getElementById('portfolio-form').reset();
+  } catch (err) {
+    console.error('Email sending failed:', err);
+    if (errorOverlay) errorOverlay.classList.add('active');
+    
+    // Auto-hide error overlay
     setTimeout(() => {
-      successOverlay.classList.remove('active');
-      submitBtn.textContent = 'Send Message';
-      submitBtn.disabled = false;
+      if (errorOverlay) errorOverlay.classList.remove('active');
     }, 5000);
-  }, 1500);
+  } finally {
+    // Reset submission state
+    isSubmitting = false;
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+  }
 }
 
-// Particle confettis
+// Helper function to show inline errors
+function showError(inputElement, message) {
+  inputElement.classList.add('input-error');
+  const errorId = inputElement.id + '-error';
+  const errorElement = document.getElementById(errorId);
+  if (errorElement) {
+    errorElement.textContent = message;
+    errorElement.classList.add('show');
+  }
+}
+
+// Particle confettis for success
 function spawnSuccessParticles(targetElement) {
   const rect = targetElement.getBoundingClientRect();
   const containerX = rect.left + rect.width / 2 + window.scrollX;

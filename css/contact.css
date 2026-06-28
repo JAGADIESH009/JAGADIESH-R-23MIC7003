@@ -63,4 +63,63 @@
 .form-success-overlay h4 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
 .form-success-overlay p { color: var(--text-secondary); font-size: 0.95rem; }
 
-.btn-submit { width: 100%; cursor: pointer; border: none; }
+.btn-submit { width: 100%; cursor: pointer; border: none; min-height: 50px; display: flex; justify-content: center; align-items: center; }
+
+/* Inline Errors & Validation */
+.inline-error {
+  position: absolute;
+  bottom: -1.4rem;
+  left: 0.2rem;
+  font-size: 0.75rem;
+  color: #ef4444;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+.inline-error.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.form-input.input-error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+.form-input.input-error:focus {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+}
+.form-input.input-error ~ .form-label {
+  color: #ef4444;
+}
+
+/* Error Overlay (based on success overlay) */
+.form-error-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(8, 6, 16, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center; padding: 2rem;
+  opacity: 0; visibility: hidden; transition: all var(--transition-normal); z-index: 100;
+}
+.form-error-overlay.active { opacity: 1; visibility: visible; }
+.error-icon-wrap {
+  width: 70px; height: 70px; border-radius: 50%; background: rgba(239, 68, 68, 0.08); border: 2px solid #ef4444;
+  display: flex; justify-content: center; align-items: center; color: #ef4444; margin-bottom: 1.5rem;
+  animation: scale-up-logo 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.error-icon-wrap svg { width: 32px; height: 32px; stroke: currentColor; stroke-width: 2.5; fill: none; }
+.form-error-overlay h4 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+.form-error-overlay p { color: var(--text-secondary); font-size: 0.95rem; }
+
+/* Loading Spinner */
+.spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+.btn-submit.loading .btn-text { display: none; }
+.btn-submit.loading .spinner { display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
