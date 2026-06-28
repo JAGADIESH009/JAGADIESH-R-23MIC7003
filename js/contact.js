@@ -80,12 +80,11 @@ async function handleFormSubmit(e) {
       email: email,
       subject: subject,
       message: message,
-      date_time: new Date().toLocaleString()
+      time: new Date().toLocaleString()
     };
 
-    // TODO: Replace with your actual Service ID and Template ID
-    const SERVICE_ID = "YOUR_SERVICE_ID"; 
-    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+    const SERVICE_ID = "service_tlewj65"; 
+    const TEMPLATE_ID = "template_uu56kne";
 
     // Call EmailJS API
     const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
