@@ -248,7 +248,7 @@
 .layer-13-portrait { z-index: 13; align-items: flex-end; /* Anchor to bottom */ padding-bottom: 20px; transition: transform 0.1s ease-out; }
 .c-character-wrapper { position: relative; height: 100%; display: flex; justify-content: center; align-items: flex-end; }
 .c-hero-img {
-  height: 105%; max-height: 95vh; width: auto; object-fit: contain; object-position: bottom center;
+  height: 95%; max-height: 85vh; width: auto; object-fit: contain; object-position: bottom center;
   display: block;
   /* Shift right */
   transform: translateX(50px);
