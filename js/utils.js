@@ -37,12 +37,13 @@ function initRippleEffects() {
   });
 }
 
-// Vector Parallax and Tilt interaction
+// Premium Vector Parallax and Tilt interaction
 function initVectorParallax() {
   try {
     const container = document.getElementById('vector-parallax-container');
     const character = document.getElementById('vector-character');
     const particles = document.getElementById('vector-particles');
+    const glow = document.getElementById('pv-magnetic-glow');
     
     if (!container || !character) return;
     
@@ -57,17 +58,23 @@ function initVectorParallax() {
       const rotateX = ((y - centerY) / centerY) * -4;
       const rotateY = ((x - centerX) / centerX) * 4;
       
-      character.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      character.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       
       if (particles) {
         const pX = ((x - centerX) / centerX) * -15;
         const pY = ((y - centerY) / centerY) * -15;
         particles.style.transform = `translate(${pX}px, ${pY}px)`;
       }
+
+      if (glow) {
+        // Adjust by half the width/height of the glow (120/2 = 60) so cursor is centered
+        glow.style.left = `${x - 60}px`;
+        glow.style.top = `${y - 60}px`;
+      }
     });
     
     container.addEventListener('mouseleave', () => {
-      character.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+      character.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`;
       if (particles) {
         particles.style.transform = `translate(0px, 0px)`;
       }
