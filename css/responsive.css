@@ -15,11 +15,19 @@
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 1.5rem; }
+  /* Fix layout overflow safely for mobile */
+  .container { padding: 0 1.25rem; box-sizing: border-box; width: 100%; overflow: visible; }
+  .header { box-sizing: border-box; width: 100%; }
+  .hero { overflow: visible; box-sizing: border-box; }
+  
   .section { padding: 6rem 0; }
   .section-title { font-size: 2rem; }
   
-  .hero-title { font-size: 3rem; }
+  /* Prevent left/right clipping on gradient text */
+  .hero-title { font-size: 3rem; padding: 0 0.1em; box-sizing: border-box; word-wrap: break-word; max-width: 100%; overflow: visible; }
+  .hero-title span { padding: 0 0.1em; }
+  .logo { padding: 0 0.1em; box-sizing: border-box; overflow: visible; }
+  
   .hero-subtitle { font-size: 1.5rem; }
   
   /* Scale down heavy graphical elements */
@@ -57,7 +65,7 @@
 
 @media (max-width: 480px) {
   .section { padding: 4.5rem 0; }
-  .hero-title { font-size: 2.4rem; }
+  .hero-title { font-size: 2.4rem; padding: 0 0.1em; word-wrap: break-word; }
   .hero-subtitle { font-size: 1.2rem; }
   .hero-desc { font-size: 1rem; }
   
