@@ -19,7 +19,7 @@ const PROJECTS_DATA = [
     desc: "An academic project studying deployment workflows, virtualization, and scalability setups on remote cloud instances."
   },
   {
-    title: "VEMU Smart Campus Website",
+    title: "Smart Campus",
     category: "academic",
     tags: ["HTML", "CSS", "Web Portal"],
     desc: "A prototype campus management platform designed to elevate student experience, offering smooth access to courses and central schedules."
