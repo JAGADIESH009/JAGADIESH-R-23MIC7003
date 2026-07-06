@@ -33,3 +33,8 @@ body.cursor-hover .custom-cursor-glow {
   .custom-cursor-dot, .custom-cursor-glow { display: none !important; }
   body, a, button, select, input, textarea, .btn, .nav-link, .project-card, .skill-card { cursor: auto !important; }
 }
+
+@media (max-width: 1024px) {
+  .custom-cursor-dot, .custom-cursor-glow { display: none !important; }
+  body, a, button, select, input, textarea, .btn, .nav-link, .project-card, .skill-card { cursor: auto !important; }
+}

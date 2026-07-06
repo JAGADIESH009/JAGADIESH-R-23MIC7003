@@ -1,5 +1,6 @@
 // Custom trailing cursor coordinates tracking
 function initCursor() {
+  if (window.innerWidth <= 1024) return;
   const cursorDot = document.getElementById('cursor-dot');
   const cursorGlow = document.getElementById('cursor-glow');
   let mouseX = 0, mouseY = 0;
