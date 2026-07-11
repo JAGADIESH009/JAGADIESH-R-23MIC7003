@@ -1,5 +1,45 @@
 /* Responsive Breakpoints & Layout Adapters */
 
+/* Ultrawide & 4K Displays */
+@media (min-width: 2560px) {
+  .container { max-width: 85%; }
+  .section { padding: 15rem 0; }
+  .section-title { font-size: 4.5rem; }
+  .hero-title { font-size: 7rem; }
+  .hero-subtitle { font-size: 3rem; margin-bottom: 3rem; }
+  .hero-desc { font-size: 1.5rem; max-width: 1000px; margin-bottom: 4rem; }
+  .premium-vector-container { max-width: 800px; height: 900px; }
+  .borderless-cinematic { height: 85vh; padding-top: 100px; }
+  
+  .projects-grid { grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 3rem; }
+  .skills-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem; }
+}
+
+/* 2K Displays & Large Desktops */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .container { max-width: 90%; }
+  .section { padding: 12rem 0; }
+  .section-title { font-size: 3.5rem; }
+  .hero-title { font-size: 5.5rem; }
+  .hero-subtitle { font-size: 2.25rem; margin-bottom: 2.5rem; }
+  .hero-desc { font-size: 1.35rem; max-width: 800px; margin-bottom: 3.5rem; }
+  .premium-vector-container { max-width: 650px; height: 750px; }
+  .borderless-cinematic { height: 80vh; padding-top: 80px; }
+  
+  .projects-grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2.5rem; }
+  .skills-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+}
+
+/* Standard Large Desktops (1440p) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container { max-width: 1360px; }
+  .hero-title { font-size: 4.5rem; }
+  .hero-subtitle { font-size: 2rem; }
+  .hero-desc { font-size: 1.25rem; max-width: 700px; }
+  .premium-vector-container { max-width: 550px; height: 600px; }
+  .borderless-cinematic { height: 78vh; }
+}
+
 @media (max-width: 992px) {
   .section { padding: 7rem 0; }
   .section-title { font-size: 2.2rem; }
