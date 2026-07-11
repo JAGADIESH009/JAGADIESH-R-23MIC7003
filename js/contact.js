@@ -83,7 +83,7 @@ async function handleFormSubmit(e) {
       time: new Date().toLocaleString()
     };
 
-    const SERVICE_ID = "service_yrdf6fs"; 
+    const SERVICE_ID = "service_tlewj65"; 
     const TEMPLATE_ID = "template_uu56kne";
 
     // Call EmailJS API
