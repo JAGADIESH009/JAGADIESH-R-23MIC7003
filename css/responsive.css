@@ -94,7 +94,7 @@
   /* Navigation Mobile Drawer */
   .menu-toggle { display: flex; z-index: 1001; }
   .nav-list {
-    position: fixed; top: 0; right: -100%; width: 80%; max-width: 300px; height: 100vh;
+    position: fixed; top: 0; right: -100%; left: auto; width: 80%; max-width: 300px; height: 100vh;
     background-color: rgba(3, 0, 20, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-left: 1px solid rgba(255, 255, 255, 0.05); flex-direction: column;
     justify-content: center; align-items: flex-start; padding: 4rem; gap: 2.5rem;
