@@ -98,25 +98,16 @@
 
 .contact-link-details h5 {
   font-family: var(--font-display, 'Inter', sans-serif);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
   transition: color 0.3s ease;
-}
-
-.contact-link-details p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
-  transition: color 0.3s ease;
-  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .contact-link-card:hover .contact-link-details h5 {
   color: #fff;
-}
-.contact-link-card:hover .contact-link-details p {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-link-arrow {

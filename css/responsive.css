@@ -99,8 +99,10 @@
     border-left: 1px solid rgba(255, 255, 255, 0.05); flex-direction: column;
     justify-content: center; align-items: flex-start; padding: 4rem; gap: 2.5rem;
     transition: right var(--transition-normal); z-index: 1000; box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transform: none; border-radius: 0;
   }
   .nav-list.open { right: 0; }
+  .nav-active-indicator { display: none; }
   .nav-link { font-size: 1.25rem; }
   .menu-toggle.open .menu-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menu-toggle.open .menu-bar:nth-child(2) { opacity: 0; }

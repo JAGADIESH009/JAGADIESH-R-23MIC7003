@@ -70,19 +70,20 @@
     <div class="aurora-circle aurora-3"></div>
   </div>
 
-  <!-- Sticky Glass Header navigation -->
+  <!-- Spatial Dock Navigation -->
   <header class="header" id="header">
     <div class="container">
       <nav class="header-nav">
         <a href="#hero" class="logo">
-          JAGADIESH R <span class="logo-dot"></span>
+          JAGADIESH R <span class="brand-orb"><span class="brand-orb-inner"></span></span>
         </a>
         <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
         </button>
-        <ul class="nav-list" id="nav-list">
+        <ul class="nav-list spatial-dock" id="nav-list">
+          <div class="nav-active-indicator" id="nav-active-indicator"></div>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
@@ -275,19 +276,19 @@
           </div>
 
           <div class="contact-cards-grid" style="margin-top: 1.5rem;">
-            <div class="about-info-item">
+            <div class="about-info-item reveal">
               <div class="about-info-icon">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
               </div>
-              <div>
+              <div class="about-info-text">
                 <span class="about-info-label">Location</span>
                 <span class="about-info-val">Andhra Pradesh, India</span>
               </div>
             </div>
-            <div class="about-info-item">
+            <div class="about-info-item reveal reveal-delay-1">
               <div class="about-info-icon">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path
@@ -295,10 +296,10 @@
                   </path>
                 </svg>
               </div>
-              <div>
+              <div class="about-info-text">
                 <span class="about-info-label">Email</span>
                 <span class="about-info-val"><a
-                    href="mailto:work.jagadiesh@gmail.com">work.jagadiesh@gmail.com</a></span>
+                    href="mailto:work.jagadiesh@gmail.com" class="about-contact-link">work.jagadiesh@gmail.com</a></span>
               </div>
             </div>
           </div>
@@ -899,7 +900,6 @@
               </div>
               <div class="contact-link-details">
                 <h5>Email</h5>
-                <p>work.jagadiesh@gmail.com</p>
               </div>
               <div class="contact-link-arrow">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -920,7 +920,6 @@
               </div>
               <div class="contact-link-details">
                 <h5>LinkedIn</h5>
-                <p>linkedin.com/in/jagadieshr</p>
               </div>
               <div class="contact-link-arrow">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -941,7 +940,6 @@
               </div>
               <div class="contact-link-details">
                 <h5>GitHub</h5>
-                <p>github.com/JAGADIESH009</p>
               </div>
               <div class="contact-link-arrow">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
