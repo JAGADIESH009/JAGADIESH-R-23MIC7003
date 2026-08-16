@@ -74,17 +74,27 @@ function initNavbar() {
     if (active) updateIndicator(active);
   });
 
-  // Mobile drawer links toggle
+  // Mobile floating dock toggle
   if (menuToggle && navList) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       menuToggle.classList.toggle('open');
       navList.classList.toggle('open');
     });
+    
     navListLinks.forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.classList.remove('open');
         navList.classList.remove('open');
       });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navList.classList.contains('open') && !navList.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('open');
+        navList.classList.remove('open');
+      }
     });
   }
 }
