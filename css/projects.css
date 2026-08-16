@@ -1,7 +1,10 @@
 /* Projects Section */
 .projects-filter { display: flex; justify-content: center; gap: 1rem; margin-bottom: 4rem; flex-wrap: wrap; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
-.project-card { height: 100%; display: flex; flex-direction: column; transform-style: preserve-3d; will-change: transform; }
+.project-card { height: 100%; display: flex; flex-direction: column; transform-style: preserve-3d; will-change: transform; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease; border: 1px solid rgba(255, 255, 255, 0.04); }
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); }
+.project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.08), transparent 70%); opacity: 0; transition: opacity 0.4s ease; z-index: 1; pointer-events: none; }
+.project-card:hover::before { opacity: 1; }
 
 .project-card-image {
   position: relative; height: 200px; width: 100%;
@@ -16,6 +19,10 @@
   width: 100%; height: 100%; position: absolute; top: 0; left: 0;
   display: flex; justify-content: center; align-items: center; z-index: 1;
   background-color: rgba(5, 5, 10, 0.45);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.project-card:hover .prem-project-cover {
+  transform: scale(1.04);
 }
 
 /* Scanner Cover */
@@ -60,6 +67,10 @@
 .server-blade:nth-child(2) .server-led { background-color: var(--accent-cyan); animation-delay: 0.3s; }
 .server-blade:nth-child(3) .server-led { background-color: var(--accent-blue); animation-delay: 0.6s; }
 .server-line-indicator { height: 3px; background: rgba(255, 255, 255, 0.04); border-radius: 2px; width: 100%; }
+.cloud-data-flow { position: absolute; height: 2px; width: 25px; background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent); animation: data-flow-anim 3s infinite linear; opacity: 0.5; z-index: 2; }
+.cloud-flow-1 { top: 35%; left: 10%; animation-delay: 0s; }
+.cloud-flow-2 { top: 65%; left: 30%; animation-delay: 1.5s; }
+@keyframes data-flow-anim { 0% { transform: translateX(-30px); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateX(80px); opacity: 0; } }
 
 /* Campus Mockup Cover */
 .prem-cover-campus {
@@ -209,5 +220,17 @@
 .project-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); font-family: var(--font-display); }
 .project-link:hover { color: var(--accent-purple); }
 .project-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* Project Status Indicators */
+.project-status-subtle { display: flex; flex-direction: column; gap: 2px; }
+.status-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.status-desc { font-size: 0.8rem; color: var(--text-secondary); }
+
+.project-status-completed { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2); }
+.project-status-completed svg { width: 16px; height: 16px; stroke: #10b981; }
+
+.project-status-current { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--accent-cyan); background: rgba(6, 182, 212, 0.08); padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid rgba(6, 182, 212, 0.2); }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); animation: pulse-dot 2s infinite ease-in-out; }
+@keyframes pulse-dot { 0% { transform: scale(0.9); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.6; } }
 
 .project-card.hidden { display: none; }
