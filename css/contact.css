@@ -7,9 +7,13 @@
 /* Contact Section Override */
 #contact .section-header { margin-bottom: 2.5rem; }
 
+#contact .section-tag { margin-bottom: 0; }
+
 /* Contact Section Heading Refinement */
 #contact .section-title {
   font-size: clamp(2.5rem, 4vw, 3.25rem);
+  margin-top: 1.75rem; /* ~28px gap from section-tag */
+  margin-bottom: 2.5rem; /* ~40px gap to intro paragraph */
   background: linear-gradient(135deg, #ffffff 30%, #c2c2f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
