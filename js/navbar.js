@@ -33,6 +33,13 @@ function initNavbar() {
   }
 
   window.addEventListener('scroll', () => {
+    // Header glass switch
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
     // Active link highlighting indicator
     let current = '';
     sections.forEach(section => {
