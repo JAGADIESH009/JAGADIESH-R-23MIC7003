@@ -1,70 +1,128 @@
-# Refined Minimal Premium Developer Portfolio
+<div align="center">
 
-A handcrafted, premium, and minimal developer portfolio website designed for **Jagadiesh R**, inspired by the visual aesthetics of **Linear, Vercel, and Apple**.
+# 👋 Hi, I'm Jagadiesh R
 
-This project has been modularized into a production-ready folder structure to improve maintainability, speed, and scalability. It is optimized to run seamlessly both on local servers and directly in the browser via double-clicking `index.html` (avoiding CORS blocks).
+### Full-Stack Developer • Web Developer • Builder
+
+I build modern, responsive and practical web experiences with a focus on clean UI, smooth interactions and real-world usability.
+
+<br/>
+
+<a href="https://jagadiesh.me">
+  <img src="https://img.shields.io/badge/🌐_Portfolio-jagadiesh.me-111111?style=for-the-badge&logoColor=white" alt="Portfolio"/>
+</a>
+
+</div>
 
 ---
 
-## Directory Structure
+## 🛠️ Tech Stack
 
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,python,django,nodejs,express,mongodb,postgres,git,github,vercel&perline=6" />
+
+</div>
+
+---
+
+## ✨ What I Build
+
+* 🌐 Modern responsive websites
+* ⚡ Interactive web applications
+* 🎨 Premium UI experiences
+* 🔧 Full-stack applications
+* 🤖 AI-powered solutions
+* 📱 Mobile-friendly interfaces
+
+---
+
+## 🚀 Projects
+
+### 🏫 Smart Campus
+
+A campus-focused platform designed to improve access to student resources, courses and campus information.
+
+### 🎓 Student Helper App
+
+A student-focused application designed to organize college resources and make everyday student tasks easier.
+
+### 🤖 AI Resume Analyzer
+
+An AI-powered concept for analyzing resumes and providing useful feedback based on job requirements.
+
+### 💰 Personal Finance Tracker
+
+A planned application focused on helping users manage, track and understand their personal finances.
+
+---
+
+## 🌐 Websites
+
+### 🏠 Real Estate
+
+A modern real-estate website featuring a polished property and services experience.
+
+### 🦷 Dental Clinic
+
+A modern dental clinic website featuring a clean, professional, patient-focused experience with WhatsApp automation for appointment booking.
+
+---
+
+## 📁 Project Structure
+
+```text
+├── assets/     # Images and static assets
+├── css/        # Modular stylesheets
+├── data/       # Project and skill data
+├── js/         # JavaScript functionality
+├── index.html  # Main entry point
+└── README.md   # Project documentation
 ```
-project/
-│
-├── index.html                  # Main semantic HTML structure
-├── README.md                   # Project documentation & setup instructions
-│
-├── assets/
-│   └── images/
-│       └── profile.png         # Profile photo
-│
-├── css/
-│   ├── style.css               # Core CSS entrypoint importing sub-sheets
-│   ├── variables.css           # Design tokens (colors, fonts, variables)
-│   ├── globals.css             # Background overlays, resets, scrollbars
-│   ├── navbar.css              # Header navigation & mobile toggle states
-│   ├── hero.css                # Spaced layout, orbit elements, light sweeps
-│   ├── about.css               # Education cards and statistics listings
-│   ├── skills.css              # Tech grid layouts and category buttons
-│   ├── projects.css            # Interactive SVG cover simulations
-│   ├── contact.css             # Floating inputs and success states
-│   ├── footer.css              # Footer layouts & back-to-top button
-│   ├── animations.css          # Conic sweeps, orbit transitions, preloader bars
-│   ├── cursor.css              # Custom trailing cursor & hover indicators
-│   └── responsive.css          # Mobile & tablet query break thresholds
-│
-├── data/
-│   ├── constants.js            # Configuration values & typing text arrays
-│   ├── skills.js               # Skills data structures
-│   └── projects.js             # Projects details lists
-│
-└── js/
-    ├── utils.js                # Magnetic elements pull & ripple helpers
-    ├── cursor.js               # Dot & halo cursor coords handlers
-    ├── particles.js            # Drifting background particle engines
-    ├── navbar.js               # Sticky glass transforms & mobile menus
-    ├── projects.js             # Category filter switches
-    ├── animations.js           # Scroll reveals, countups, typing loops
-    ├── contact.js              # Success confetti canvas generators
-    └── main.js                 # Global document load initiators
-```
 
 ---
 
-## Key Refinements & Architecture
+## 📊 GitHub
 
-1. **CORS-Free Architecture**: Script files in `js/` and data variables in `data/` are loaded as standard script dependencies rather than ES Modules. This ensures that double-clicking `index.html` on any device opens the site locally with 100% features and no console blocks.
-2. **Modular CSS Entry**: All individual section styles are separated. They are loaded cleanly in a single import manifest `css/style.css` which is linked in the HTML header.
-3. **Structured Configurations**: Magic typing intervals, speed thresholds, and particle quantities are stored inside a centralized config dictionary inside `data/constants.js`.
-4. **Clean Code**: No inline CSS, inline Javascript, or duplication.
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=JAGADIESH009&show_icons=true&hide_border=true&theme=transparent&rank_icon=github" height="165"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JAGADIESH009&layout=compact&hide_border=true&theme=transparent" height="165"/>
+
+</div>
 
 ---
 
-## Local Verification Guidelines
-To view the animations, cursor trails, and visual elements:
-- Double-click the [index.html](file:///c:/Users/jagad/OneDrive/Documents/Projects/My%20portfolio/index.html) file to open it directly in Chrome, Firefox, or Edge.
-- Alternatively, run a local Python HTTP server in this directory:
-  ```bash
-  python -m http.server 8080
-  ```
-  And navigate to `http://localhost:8080` in your web browser.
+## 🔥 Contributions
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=JAGADIESH009&hide_border=true&theme=transparent" />
+
+</div>
+
+---
+
+## 🌐 Connect
+
+<div align="center">
+
+<a href="https://jagadiesh.me">
+  <img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge" />
+</a>
+<a href="https://github.com/JAGADIESH009">
+  <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github" />
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+### Building. Learning. Shipping. 🚀
+
+© 2026 Jagadiesh R
+
+</div>
