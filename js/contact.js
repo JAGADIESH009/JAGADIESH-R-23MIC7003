@@ -74,22 +74,19 @@ async function handleFormSubmit(e) {
   submitBtn.disabled = true;
 
   try {
-    // Construct template parameters mapping to email requirements
-    const templateParams = {
-      name: name,
-      email: email,
-      subject: subject,
-      message: message,
-      time: new Date().toLocaleString()
-    };
-
     // Call secure serverless function
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(templateParams)
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        time: new Date().toLocaleString()
+      })
     });
     
     if (response.ok) {
