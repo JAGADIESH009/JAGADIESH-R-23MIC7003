@@ -4,7 +4,30 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { name, email, subject, message, time } = req.body;
+    let { name, email, subject, message, time } = req.body || {};
+
+    if (!name || typeof name !== 'string') return res.status(400).json({ message: 'Name is required' });
+    if (!email || typeof email !== 'string') return res.status(400).json({ message: 'Email is required' });
+    if (!subject || typeof subject !== 'string') return res.status(400).json({ message: 'Subject is required' });
+    if (!message || typeof message !== 'string') return res.status(400).json({ message: 'Message is required' });
+
+    name = name.trim();
+    email = email.trim();
+    subject = subject.trim();
+    message = message.trim();
+
+    if (!name || !email || !subject || !message) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: 'Invalid email format' });
+    }
+
+    if (name.length > 100 || email.length > 150 || subject.length > 200 || message.length > 5000) {
+      return res.status(400).json({ message: 'Input excessively large' });
+    }
 
     const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
@@ -24,7 +47,7 @@ module.exports = async function handler(req, res) {
         email,
         subject,
         message,
-        time
+        time: time || new Date().toLocaleString()
       }
     };
 
@@ -32,7 +55,7 @@ module.exports = async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Origin': req.headers.origin || 'https://jagadiesh.me'
+        'Origin': 'https://jagadiesh.me'
       },
       body: JSON.stringify(payload),
     });
