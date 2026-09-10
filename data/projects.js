@@ -23,11 +23,5 @@ const PROJECTS_DATA = [
     category: "dev",
     tags: ["HTML", "CSS", "JS", "Charts"],
     desc: "A dashboard tracking monthly incomes and expenses. Visualizes data reports, savings targets, and financial summaries through highly interactive analytical graphs."
-  },
-  {
-    title: "Cloud Computing Project",
-    category: "academic",
-    tags: ["Cloud Infrastructure", "University Project"],
-    desc: "An academic project studying deployment workflows, virtualization, and scalability setups on remote cloud instances."
   }
 ];
