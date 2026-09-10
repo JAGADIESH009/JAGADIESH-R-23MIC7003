@@ -32,6 +32,7 @@ module.exports = async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Origin': req.headers.origin || 'https://jagadiesh.me'
       },
       body: JSON.stringify(payload),
     });
