@@ -83,13 +83,16 @@ async function handleFormSubmit(e) {
       time: new Date().toLocaleString()
     };
 
-    const SERVICE_ID = "service_tlewj65"; 
-    const TEMPLATE_ID = "template_uu56kne";
-
-    // Call EmailJS API
-    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+    // Call secure serverless function
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(templateParams)
+    });
     
-    if (response.status === 200) {
+    if (response.ok) {
       if (successOverlay) successOverlay.classList.add('active');
       spawnSuccessParticles(submitBtn);
       form.reset();
@@ -99,7 +102,7 @@ async function handleFormSubmit(e) {
         if (successOverlay) successOverlay.classList.remove('active');
       }, 5000);
     } else {
-      throw new Error('EmailJS returned non-200 status');
+      throw new Error('Server returned non-200 status');
     }
     
   } catch (err) {
