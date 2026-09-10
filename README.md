@@ -16,7 +16,7 @@ project/
 │
 ├── assets/
 │   └── images/
-│       └── profile.jpg         # Profile photo
+│       └── profile.png         # Profile photo
 │
 ├── css/
 │   ├── style.css               # Core CSS entrypoint importing sub-sheets
